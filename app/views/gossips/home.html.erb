@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+      <h1>
+      <h1>Bienvenue sur "The Gossip Project" !
+      <!-- <br>  -->
+      </h1><br>
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th>Les potins</th>
+            <th>Les auteurs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @gossips.each do |go| %>
+          <tr>
+            <td><%= link_to go.title, show_path(go.id) %></td>
+            <td><%= link_to go.user.first_name, user_path(go.user.id) %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

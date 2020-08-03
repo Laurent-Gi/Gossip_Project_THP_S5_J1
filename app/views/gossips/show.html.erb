@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+    
+    <h2 class="text-capitalize"> <%= @gossip.title %> </h2>
+
+    <p><%= @gossip.content %></p>
+
+    <h4>Auteur - <%= link_to "#{@gossip.user.first_name} #{@gossip.user.last_name}", user_path(@gossip.user.id) %></h4>
+        
+    </div>
+  </div>
+
+  <br><br><br>
+  <h4><%= link_to "Retour à la page des potins", root_path %></h4>
+
+</div>

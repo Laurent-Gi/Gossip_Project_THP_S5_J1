@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+/*Ici je peux ajouter du CSS*/
+
+.my-jumbotron {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/pain.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-attachment: fixed;
+
+  height: 300px;
+}
+
+.centrer {
+  text-align: center;
+} 
