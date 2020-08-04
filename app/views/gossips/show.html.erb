@@ -2,12 +2,21 @@
   <div class="row">
     <div class="col-sm-12">
     
-    <h2 class="text-capitalize"> <%= @gossip.title %> </h2>
+      <!-- <h2 class="text-capitalize"> <%= @gossip.title %> </h2> -->
+      <!-- <p><%= @gossip.content %></p> -->
+      <!-- <h4>Auteur - <%= link_to "#{@gossip.user.first_name} #{@gossip.user.last_name}", user_path(@gossip.user.id) %></h4> -->
 
-    <p><%= @gossip.content %></p>
 
-    <h4>Auteur - <%= link_to "#{@gossip.user.first_name} #{@gossip.user.last_name}", user_path(@gossip.user.id) %></h4>
-        
+      <div class="card border-success w-50" style="width: 18rem;">
+        <img class="card-header" src=".../100px180/" alt=<%= @gossip.title %> />
+        <div class="card-body text-success">
+          <h5 class="card-title"><%="#{@gossip.user.first_name} #{@gossip.user.last_name}"%></h5>
+          <p class="card-text"><%= @gossip.content %></p>
+          <%= link_to 'Voir l\'auteur', user_path(@gossip.user.id), :class => 'btn btn-success' %>
+
+        </div>
+      </div>
+
     </div>
   </div>
 
