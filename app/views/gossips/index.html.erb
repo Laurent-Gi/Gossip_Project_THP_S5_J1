@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+
+      <% if @gossip %>
+        <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Félicitations !</h4>
+          <!-- <button type="button" class="close" data-dismiss="alert">&times;</button> -->
+          <p>Votre gossip à bien été créé... vous pouvez d'ors et déjà le voir ci dessous !</p>
+        </div>
+      <% end %>
+
+
+      <p>Tests perso sur les liens </p>
+      <% goss = @gossips.first %>
+      <a href="<%= gossip_path(goss.id)%>" class="btn">Voir l'article avec first</a>
+
+
+      <h1>Bienvenue sur "The Gossip Project" !</h1><br>
+
+      <h2><%= link_to "Création d'un Gossip !", new_gossip_path, :class => "btn btn-success" %></h2><br>
+
+      <p>Consultez les Gossips existants </p>
+
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th>Les potins</th>
+            <th>Les auteurs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @gossips.each do |go| %>
+          <tr>
+            <td><%= link_to go.title, gossip_path(go.id) %></td>
+            <td><%= link_to go.user.first_name, user_path(go.user.id) %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+
